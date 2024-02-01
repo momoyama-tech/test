@@ -1,0 +1,18 @@
+.event-card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .event-card {
+    width: 100% !important; /* 横幅を画面の90%に */
+    max-width: 25rem; /* 最大幅を18remに制限 */
+  }
+  
+  @media (min-width: 768px) {
+    .event-card {
+      max-width: 95% !important; /* タブレットやデスクトップでは最大幅も90%に */
+    }
+  }
+  
