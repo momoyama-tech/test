@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} /> {/* ホームページへのデフォルトパス */}
-        <Route path="/event-details" element={<EventDetails />} /> {/* URLの構造を改善 */}
+        <Route path="/EventDetails" element={<EventDetails />} /> {/* URLの構造を改善 */}
       </Routes>
       <Footer />
     </Router>

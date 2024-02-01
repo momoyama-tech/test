@@ -7,7 +7,7 @@ function EventCard() {
   const navigate = useNavigate();
 
   const handleViewDetails = () => {
-    navigate('/EventDetails');
+    navigate('EventDetails');
   };
 
   return (
