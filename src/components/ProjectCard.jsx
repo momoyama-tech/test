@@ -49,7 +49,7 @@ function ProjectCard() {
         </div>
 
         <div className="topic-item" onClick={onClickPage3}>
-          <img src="" alt="" />
+          <img src="aaa.png" alt="" />
           <h3 className="topic-subtitle">限界☆ギリギリ卒論制作!</h3>
           <p>
             中学・高校、そして社会人が行わず、
