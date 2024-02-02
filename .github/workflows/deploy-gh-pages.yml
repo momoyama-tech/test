@@ -19,7 +19,7 @@ jobs:
   build:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }} # deploymentからdeployに変更
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,13 +29,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '20' # Nodeのバージョンを20に更新
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm ci && npm run build
         env:
-          PUBLIC_URL: /myProfileTemplate
+          PUBLIC_URL: /spring-hackathon-2024 # 必要に応じてPUBLIC_URLを設定
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -44,10 +44,12 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }} # 変数名を修正
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploy # IDをdeploymentからdeployに変更
         uses: actions/deploy-pages@v2
