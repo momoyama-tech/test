@@ -7,11 +7,11 @@ import EventDetails from './components/EventDetails';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} /> {/* ホームページへのデフォルトパス */}
-        <Route path="/EventDetails" element={<EventDetails />} /> {/* URLの構造を改善 */}
+        <Route path="/" element={<Home />} />
+        <Route path="/EventDetails" element={<EventDetails />} />
       </Routes>
       <Footer />
     </Router>
@@ -19,3 +19,4 @@ const App = () => {
 }
 
 export default App;
+
